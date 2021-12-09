@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pomodoro Timer</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <svg class="progress-ring" width="510" height="510">
+      <circle
+        class="progress-ring__circle"
+        stroke="white"
+        stroke-width="4"
+        fill="transparent"
+        r="250"
+        cx="60"
+        cy="60"
+      />
+    </svg>
+    <div class="counter-indicator">
+      <div class="counter-container">
+        <div class="timer">
+          <input
+            type="number"
+            name="minutes"
+            id="minutes"
+            value="15"
+            maxlength="2"
+            max="2"
+            disabled
+          />
+          :
+          <input
+            type="number"
+            name="seconds"
+            id="seconds"
+            value="00"
+            maxlength="2"
+            max="2"
+            disabled
+          />
+        </div>
+
+        <div class="counter-buttons">
+          <button id="startStopButton">Start</button>
+          <button class="gear">
+            <img src="./images/gear.svg" alt="gear" />
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./main.js"></script>
+    <!-- <script src="./progress-ring.js"></script> -->
+  </body>
+</html>

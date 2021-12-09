@@ -1,0 +1,125 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&display=swap");
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "bebasneue-book";
+  src: url("./fonts/bebasneue-book-webfont.woff");
+}
+
+body {
+  background: #2b2a30;
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  color: #fff;
+  position: relative;
+}
+
+svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(180deg);
+  pointer-events: none;
+  /* transform: rotate(360deg); */
+}
+
+button {
+  background: none;
+  border: none;
+  display: block;
+  color: #fff;
+  font-size: 16px;
+  font-family: "Montserrat", sans-serif;
+  line-height: 20px;
+  text-align: center;
+  letter-spacing: 0.6em;
+  text-transform: uppercase;
+  font-weight: bold;
+  cursor: pointer;
+  width: 100%;
+}
+
+button + button {
+  margin-top: 2rem;
+}
+
+.counter-container {
+  display: grid;
+  place-content: center;
+  background: radial-gradient(
+    71.4% 71.4% at 51.7% 28.6%,
+    #3a393f 0%,
+    #17171a 100%
+  );
+  box-shadow: inset 0px 0px 114px rgba(0, 0, 0, 0.45), -5px 14px 44px #000000,
+    5px -16px 50px rgba(255, 255, 255, 0.15);
+  border-radius: 50%;
+  /* padding: 2rem; */
+  width: 500px;
+  height: 500px;
+}
+
+.timer {
+  font-family: "bebasneue-book";
+  font-size: 196px;
+  line-height: 196px;
+}
+
+.counter-buttons {
+  display: grid;
+  place-content: center;
+  margin-top: 1rem;
+}
+
+.counter-buttons .gear {
+  /* width: 24px;
+  height: 24px; */
+  /* margin: auto; */
+}
+
+#minutes,
+#seconds {
+  /* display: none; */
+  font-family: "bebasneue-book";
+  font-size: 196px;
+  line-height: 196px;
+  width: 150px;
+  appearance: none;
+  background: none;
+  border: none;
+  border-bottom: 1px dashed transparent;
+  color: #fff;
+  text-align: center;
+}
+
+.dashedLine {
+  border-bottom: 1px dashed #fff !important;
+}
+
+.progress-ring__circle {
+  /* position: absolute; */
+  top: 70%;
+  transition: 0.35s stroke-dashoffset;
+  /* axis compensation */
+  transform: rotate(-90deg) translate(194px, 193px);
+  transform-origin: center;
+  stroke: #09a65a;
+}
