@@ -25,6 +25,7 @@ img {
   /* background: #fff; */
   /* box-shadow: 0px 4px 20px #e8eaef;
   border-radius: 32px; */
+  max-width: 550px;
 }
 
 input[type="checkbox"] {
@@ -98,6 +99,21 @@ label {
   animation: skeleton 650ms linear infinite alternate;
 }
 
+.skeleton + .skeleton {
+  margin-top: 1rem;
+}
+
+.pod-list {
+  height: 400px;
+  overflow-y: scroll;
+  /* -ms-overflow-style: none;
+  scrollbar-width: none; */
+}
+
+/* .pod-list::-webkit-scrollbar {
+  display: none;
+} */
+
 @keyframes skeleton {
   0% {
     background-color: rgba(0, 0, 0, 0.384);
@@ -110,6 +126,7 @@ label {
 @media (min-width: 768px) {
   .podcast__container {
     display: flex;
+    max-width: max-content;
   }
 
   .podcasts {
@@ -118,13 +135,13 @@ label {
   }
 
   label {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 33px;
   }
 
   input[type="checkbox"] {
-    height: 41px;
-    width: 41px;
+    height: 35px;
+    width: 35px;
     border-radius: 12px;
   }
 

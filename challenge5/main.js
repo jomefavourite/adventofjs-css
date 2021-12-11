@@ -1,22 +1,20 @@
-import { allEpisodes } from "./data.js";
+const podList = document.querySelector(".pod-list");
 
-console.log(allEpisodes);
+let index = [];
 
 fetch("./data.json")
   .then((res) => res.json())
-  .then((data) => console.log(data));
-
-async function getEpisodes() {
-  await fetch("./data.json")
-    .then((res) => res.json())
-    .then((data) => console.log(data));
-}
-
-getEpisodes();
-
-const allInputs = document.querySelectorAll('input[type="checkbox"]');
-
-let index = [];
+  .then((data) => {
+    if (data) podList.innerHTML = "";
+    data.forEach((data, i) => {
+      return (podList.innerHTML += `
+        <li>
+          <input type="checkbox" id="one" />
+          <label for="one"> ${i + 1} || ${data}</label>
+        </li>
+      `);
+    });
+  });
 
 function filterNumbers(min, max) {
   return function (a, i) {
@@ -25,11 +23,8 @@ function filterNumbers(min, max) {
 }
 
 window.addEventListener("keyup", (e) => {
-  allInputs.forEach((input, i) => {
-    if (input.checked) {
-      console.log(i);
-    }
-  });
+  const allInputs = document.querySelectorAll('input[type="checkbox"]');
+
   if (e.key === "Shift") {
     allInputs.forEach((input, i) => {
       if (input.checked) {
@@ -37,12 +32,12 @@ window.addEventListener("keyup", (e) => {
       }
     });
 
-    console.log(index);
+    // console.log(index);
     let inBetweenInput = [...allInputs].filter(
-      filterNumbers(index[0], index[index.length - 1])
+      filterNumbers(index[index.length - 2], index[index.length - 1])
     );
 
-    console.log(inBetweenInput);
+    // console.log(inBetweenInput);
 
     inBetweenInput.forEach((el) => {
       el.checked = true;
