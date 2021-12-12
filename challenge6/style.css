@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;700&display=swap");
+
+/* https://tippingpoint.dev/style-range-input-css */
+
+* {
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: grid;
+  place-content: center;
+  background: #262529;
+  height: 100vh;
+  font-family: "Source Sans Pro", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  color: #ffc700;
+  font-style: normal;
+  font-weight: bold;
+  font-size: clamp(20px, 4vw, 93.7698px);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.dollar {
+  font-size: clamp(16px, 2vw, 65.081px);
+}
+
+.container {
+  width: 60vw;
+  max-width: 500px;
+  background: #262529;
+  box-shadow: 0px 0px 250px #000000;
+  border-radius: 20px;
+  padding: 2rem;
+}
+
+.container > * + * {
+  margin-top: 2rem;
+}
+
+input {
+  width: 100%;
+}
+
+button {
+  display: block;
+  background: #333139;
+  border-radius: 100px;
+  border: none;
+  color: #fff;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  cursor: pointer;
+  transition: background 200ms;
+}
+
+button:hover {
+  background: #3331399f;
+}
+
+/* Styling the track */
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin-right: 15px;
+  height: 1.5vmin;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 5px;
+  background-image: linear-gradient(#ea346f, #ea346f);
+  background-size: 50% 100%;
+  background-repeat: no-repeat;
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background: #ea346f;
+  cursor: ew-resize;
+  box-shadow: 0px 0px 1px 6px #ea346e8c;
+  transition: background 0.3s ease-in-out;
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
